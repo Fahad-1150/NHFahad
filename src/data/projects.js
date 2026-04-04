@@ -1,15 +1,4 @@
-export interface Project {
-    title: string;
-    description: string;
-    tech: string;
-    githubUrl?: string;
-    linkedinUrl?: string;
-    type?: "website" | "app" | "other";
-    websiteUrl?: string;
-    downloadUrl?: string;
-}
-
-export const projectsData: Project[] = [
+export const projectsData = [
     {
         title: "Bus Ticket Booking System",
         description: "A system for booking bus seats with admin dashboard.",

@@ -1,0 +1,151 @@
+.skills-section {
+  padding: 8rem 1.5rem;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+.skills-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.tech-stack-section {
+  margin-bottom: 8rem;
+}
+
+.tech-stack-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.tech-stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-icon-box {
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.tech-item:hover .tech-icon-box {
+  background: black;
+  color: white;
+}
+
+.tech-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.skills-content-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skill-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 1s;
+}
+
+.skill-card:hover {
+  border-color: black;
+}
+
+.skill-icon {
+  padding: 0.75rem;
+  background: black;
+  color: white;
+  flex-shrink: 0;
+  transition: all 1s;
+}
+
+.skill-card:hover .skill-icon {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.skill-info h3 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.skill-info p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .tech-stack-title,
+  .skills-content-title {
+    font-size: 1.875rem;
+  }
+
+  .tech-stack-grid {
+    gap: 1.5rem;
+  }
+
+  .tech-icon-box {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

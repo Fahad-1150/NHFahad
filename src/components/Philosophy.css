@@ -1,0 +1,68 @@
+.philosophy-section {
+  padding: 8rem 1.5rem;
+  background: white;
+  color: black;
+  overflow: hidden;
+}
+
+.philosophy-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: block;
+  color: #9ca3af;
+}
+
+.philosophy-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .philosophy-title {
+    font-size: 3.75rem;
+  }
+}
+
+.philosophy-divider {
+  border-top: 4px solid black;
+  padding-top: 3rem;
+}
+
+.philosophy-quote {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .philosophy-quote {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .philosophy-title {
+    font-size: 1.875rem;
+  }
+
+  .philosophy-quote {
+    font-size: 1.25rem;
+  }
+}

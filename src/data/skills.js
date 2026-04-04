@@ -1,11 +1,4 @@
-export interface Skill {
-    name: string;
-    level: string;
-    iconName: string;
-    category: "Language" | "Web" | "Database" | "Tool";
-}
-
-export const skillsData: Skill[] = [
+export const skillsData = [
     { name: "C", level: "Intermediate", iconName: "Code2", category: "Language" },
     { name: "C++", level: "Intermediate", iconName: "Cpu", category: "Language" },
     { name: "JavaScript", level: "Beginner", iconName: "FileJson", category: "Language" },

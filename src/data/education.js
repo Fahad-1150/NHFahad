@@ -1,11 +1,4 @@
-export interface Education {
-    degree: string;
-    institution: string;
-    duration: string;
-    description?: string;
-}
-
-export const educationData: Education[] = [
+export const educationData = [
     {
         degree: "Bachelor of Science in Computer Science and Engineering",
         institution: "Your University Name",

@@ -1,9 +1,4 @@
-export interface Tech {
-    name: string;
-    iconName: string;
-}
-
-export const techStackData: Tech[] = [
+export const techStackData = [
     { name: "React", iconName: "Atom" },
     { name: "TypeScript", iconName: "FileCode" },
     { name: "Tailwind CSS", iconName: "Wind" },

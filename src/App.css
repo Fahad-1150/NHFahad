@@ -1,0 +1,25 @@
+.app-container {
+  min-height: 100vh;
+  background: black;
+  color: white;
+  user-select: none;
+}
+
+.app-main {
+  /* main content area */
+}
+
+.app-footer {
+  padding: 3rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #6b7280;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+::selection {
+  background-color: white;
+  color: black;
+}

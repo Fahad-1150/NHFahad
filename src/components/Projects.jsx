@@ -1,15 +1,10 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { projectsData, Project } from "../data/projects";
+import { projectsData } from "../data/projects.js";
 import { Github, Linkedin, ExternalLink, X, Download, Globe } from "lucide-react";
+import "./Projects.css";
 
-interface ProjectCardProps {
-  project: Project;
-  index: number;
-  key?: string | number;
-}
-
-function ProjectCard({ project, index }: ProjectCardProps) {
+function ProjectCard({ project, index }) {
   const [showLinks, setShowLinks] = useState(false);
 
   const handleCardClick = () => {
@@ -26,20 +21,20 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
       onClick={handleCardClick}
-      className="relative border border-white/20 p-10 flex flex-col justify-between hover:border-white transition-colors group cursor-pointer overflow-hidden min-h-[350px]"
+      className="project-card"
     >
       <div>
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="text-3xl font-bold">{project.title}</h3>
+        <div className="project-header">
+          <h3 className="project-title">{project.title}</h3>
           {project.type === "website" && (
-            <Globe size={20} className="text-gray-500 group-hover:text-white transition-colors" />
+            <Globe size={20} className="project-icon" />
           )}
         </div>
-        <p className="text-gray-400 mb-8 leading-relaxed">{project.description}</p>
+        <p className="project-description">{project.description}</p>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="project-tags">
         {project.tech.split(',').map(tech => (
-          <span key={tech} className="text-xs font-mono border border-white/20 px-3 py-1 rounded-full group-hover:border-white/50">
+          <span key={tech} className="project-tag">
             {tech.trim()}
           </span>
         ))}
@@ -51,35 +46,35 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             initial={{ opacity: 0, y: "100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "100%" }}
-            className="absolute inset-0 bg-white text-black p-10 flex flex-col justify-center items-center gap-6 z-10"
+            className="project-overlay"
           >
             <button 
               onClick={(e) => {
                 e.stopPropagation();
                 setShowLinks(false);
               }}
-              className="absolute top-6 right-6 hover:scale-110 transition-transform"
+              className="overlay-close"
             >
               <X size={24} />
             </button>
             
-            <h4 className="text-xl font-bold mb-2 uppercase tracking-widest">
+            <h4 className="overlay-title">
               {project.type === "app" ? "Download App" : "Open Project"}
             </h4>
             
-            <div className="flex flex-col w-full gap-4">
+            <div className="overlay-buttons">
               {project.type === "app" && project.downloadUrl && (
                 <a
                   href={project.downloadUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-between border-2 border-black px-6 py-4 bg-black text-white hover:bg-white hover:text-black transition-all font-bold group/link"
+                  className="overlay-button" style={{backgroundColor: 'black', color: 'white'}}
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="overlay-button-text">
                     <Download size={20} /> Download Now
                   </span>
-                  <ExternalLink size={16} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                  <ExternalLink size={16} className="overlay-button-icon" />
                 </a>
               )}
 
@@ -89,12 +84,12 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-between border-2 border-black px-6 py-4 hover:bg-black hover:text-white transition-all font-bold group/link"
+                  className="overlay-button"
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="overlay-button-text">
                     <Github size={20} /> GitHub
                   </span>
-                  <ExternalLink size={16} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                  <ExternalLink size={16} className="overlay-button-icon" />
                 </a>
               )}
               
@@ -104,12 +99,12 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-between border-2 border-black px-6 py-4 hover:bg-black hover:text-white transition-all font-bold group/link"
+                  className="overlay-button"
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="overlay-button-text">
                     <Linkedin size={20} /> LinkedIn
                   </span>
-                  <ExternalLink size={16} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                  <ExternalLink size={16} className="overlay-button-icon" />
                 </a>
               )}
             </div>
@@ -122,10 +117,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 text-center tracking-tight">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section id="projects" className="projects-section">
+      <div className="projects-container">
+        <h2 className="projects-title">Projects</h2>
+        <div className="projects-grid">
           {projectsData.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
